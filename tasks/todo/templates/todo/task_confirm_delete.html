@@ -1,0 +1,11 @@
+
+<h1>Delete Thing</h1>
+
+<p>Are you sure you want to delete the task: {{ task }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete.">
+  <input type="submit" onclick="window.location='{% url 'todo:all' %}' ; return false;" value="Cancel">
+</form>
+

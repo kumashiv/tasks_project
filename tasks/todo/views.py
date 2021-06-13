@@ -1,13 +1,5 @@
-from django.shortcuts import render
 
 from django.http import HttpResponse
-
-# Create your views here.
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
@@ -16,9 +8,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from todo.models import Thing, Task
-#from autos.forms import MakeForm
-
-# Create your views here.
 
 
 class MainView(View):
@@ -37,3 +26,44 @@ class TaskView(View):
         ctx = {'task_list': task_list}
         return render(request, 'todo/task_list.html', ctx)
 
+
+
+
+
+class ThingCreate(CreateView):
+    model = Thing
+    fields = '__all__'
+    success_url = reverse_lazy('todo:all')
+
+
+class ThingUpdate(UpdateView):
+    model = Thing
+    fields = '__all__'
+    success_url = reverse_lazy('todo:all')
+
+
+class ThingDelete(DeleteView):
+    model = Thing
+    fields = '__all__'
+    success_url = reverse_lazy('todo:all')
+
+
+
+
+
+class TaskCreate(CreateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('todo:all')
+
+
+class TaskUpdate(UpdateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('todo:all')
+
+
+class TaskDelete(DeleteView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('todo:all')

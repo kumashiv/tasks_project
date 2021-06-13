@@ -5,10 +5,18 @@
     {% for task in task_list %}
       <li>
           {{ task.name }}
-
+          (<a href="{% url 'todo:task_update' task.id %}">Update</a> |
+          <a href="{% url 'todo:task_delete' task.id %}">Delete</a>) <br/>
+          {{ task.description }}
       </li>
     {% endfor %}
   </ul>
   {% else %}
     <p>There are no tasks in the library.</p>
   {% endif %}
+
+
+  <p><a href="{% url 'todo:task_create' %}">Add a task</a></p>
+  <p>
+    <a href="{% url 'todo:all' %}">Back to Things</a>
+  </p>
