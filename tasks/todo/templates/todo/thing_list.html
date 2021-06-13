@@ -1,0 +1,14 @@
+
+<h1>Thing List</h1>
+  {% if thing_list %}
+  <ul>
+    {% for thing in thing_list %}
+      <li>
+          {{ thing.name }}
+
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no things in the library.</p>
+  {% endif %}
