@@ -5,3 +5,4 @@ from .models import Thing, Task
 
 admin.site.register(Thing)
 admin.site.register(Task)
+
