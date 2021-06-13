@@ -9,13 +9,13 @@
 </div>
 <div class="container my-4 w-75">
     <div class="d-flex flex-main">
-        <div class="p-4 flex-fill text-center border-light rounded">Created Tasks</div>
+        <div class="p-4 flex-fill text-center border-light rounded">Created Tasks : {{ task_count }}</div>
         <div class="p-4  flex-fill text-center border-light rounded">Completed Tasks</div>
     </div>
 </div>
 {% if thing_list %}
 {% for thing in thing_list %}
-<a href="#">
+<a href="{% url 'todo:thing_update' thing.id %}">
 <div class="container">
     <!--card-columns-->
     
