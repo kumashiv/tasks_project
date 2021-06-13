@@ -1,6 +1,47 @@
-
-<h1>Thing List</h1>
-  {% if thing_list %}
+{% extends "base_main.html" %}
+{% block content %}
+<div class="container-fluid p-4 main-header">
+    <div class="header-offset">
+        <h1>Your</h1>
+        <h1>Things</h1>
+        <p>May 10, 2021</p>
+    </div>
+</div>
+<div class="container my-4 w-75">
+    <div class="d-flex flex-main">
+        <div class="p-4 flex-fill text-center border-light rounded">Created Tasks</div>
+        <div class="p-4  flex-fill text-center border-light rounded">Completed Tasks</div>
+    </div>
+</div>
+{% if thing_list %}
+{% for thing in thing_list %}
+<a href="#">
+<div class="container">
+    <!--card-columns-->
+    
+        <div class="card mb-3 my-card">
+            <div class="card-body">
+                <h6>{{ thing.name }}</h6>
+                {% with total=thing.task_set.all.count %}
+                <p class="float-right">{{total}}</p>
+                {% endwith %}
+                (<a href="{% url 'todo:thing_update' thing.id %}">Update</a> |
+                <a href="{% url 'todo:thing_delete' thing.id %}">Delete</a>)
+            </div>
+        </div>
+    
+</div>
+</a>
+{% endfor %}
+{% else %}
+<p>There are no things in the library.</p>
+{% endif %}
+<p>
+    <a href="{% url 'todo:task_list' %}">View tasks</a> ({{ task_count }}) |
+    <a href="{% url 'todo:thing_create' %}">Add a thing</a>
+</p>
+{% endblock %}
+<!--  {% if thing_list %}
   <ul>
     {% for thing in thing_list %}
       <li>
@@ -12,11 +53,4 @@
   </ul>
   {% else %}
     <p>There are no things in the library.</p>
-  {% endif %}
-
-
-
-  <p>
-  <a href="{% url 'todo:task_list' %}">View tasks</a> ({{ task_count }}) | 
-    <a href="{% url 'todo:thing_create' %}">Add a thing</a>
-  </p>
+  {% endif %} -->
