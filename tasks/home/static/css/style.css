@@ -1,0 +1,201 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /*font-family:  Verdana, "Courier New","Lucida Console", monospace;*/
+    /* background-color: #FEFAF6; */
+}
+
+h1 {
+
+    letter-spacing: 7px;
+    font-size: 280%;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px #F26D3D;
+}
+
+h3 {
+    letter-spacing: 3px;
+    font-weight: 1.5em;
+}
+
+h5 {
+    color: #2B2A29;
+}
+
+label {
+    font-size: 175%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:before,
+a:after {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #3F3779;
+}
+
+.main-header {
+    background-color: #2B2A29;
+    color: #A9D6C9;
+    color: #F26D3D;
+    color: #FEFAF6;
+}
+
+.main-header p {
+    color: #FEFAF6;
+    margin-top: 50px;
+    color: #D9D9D9;
+}
+
+.header-offset {
+    margin-left: 80px;
+}
+
+.my-card {
+    background-color: #03A396;
+    box-shadow: 2px 2px 4px #2B2A29;
+}
+
+.card-body span {
+    letter-spacing: 2.5px;
+    font-size: 130%;
+    color: #FEFED3;
+
+    color: #FEFAF6;
+    text-shadow: 1px 1px #2B2A29;
+}
+
+.card-body span:hover{
+	color: #7F74CA;
+}
+
+.card-body p {
+    margin-left: 20px;
+    /*float: right;*/
+    color: #CAC8C8;
+    letter-spacing: 2px;
+}
+
+
+/*
+.flex-main {
+	background-color: #DEB578;
+	font-size: 125%;
+	font-weight: 400;
+	letter-spacing: 2px;
+
+	color: #2B2A29;
+	border-radius: 6px;
+}
+*/
+
+
+.btn {
+    color: #FFFFFF;
+    background-color: #2B2A29;
+    /* margin-bottom: 60px; */
+}
+
+.btn:hover{
+	background-color: #3F3779;
+	color: #FFFFFF;
+}
+
+.btn-info{
+	border-radius: 5px;
+}
+
+.my-btn-delete{
+	font-size:24px;
+	color: #3E3C3C;
+    background-color: transparent;
+}
+
+.my-btn-delete:hover{
+	color: #3F3779;
+    background-color: transparent;
+    /* font-size: 26px; */
+}
+
+/*Detail pages*/
+
+.detail-title {
+    color: #03A396;
+    text-shadow: 2px 2px 1px #A9D6C9;
+}
+
+.detail-title h3 {
+    font-size: 250%;
+    padding: 8px;
+    border-bottom: 1px solid #A9D6C9;
+}
+
+.my-flex {
+    border: 1px solid #DEB578;
+    font-size: 125%;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+    color: #2B2A29;
+    border-radius: 5px;
+}
+
+
+
+
+.task-of-thing {
+    font-size: 150%;
+    border: 1px solid #DEB578;
+    /* border-radius: 4px; */
+}
+
+
+/*
+.flex-main {
+	font-size: 125%;
+	font-weight: 400;
+	letter-spacing: 2px;
+
+	color: #2B2A29;
+
+	border: 2px solid #DEB578;
+	border-radius: 5px;
+}
+*/
+
+
+.flex-main {
+    background-color: #DEB578;
+    font-size: 125%;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+    color: #2B2A29;
+    border-radius: 6px;
+}
+
+.my-label {
+    color: #7D7B7B;
+}
+
+.my-card-2 {
+    background-color: #A9D6C9;
+    border: 1px solid #2B2A29;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 3px #2B2A29;
+
+}
+
+
+.form-group {
+    box-shadow: .3px .3px 1px #2B2A29;
+}

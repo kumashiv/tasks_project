@@ -1,11 +1,21 @@
+{% extends "base_main.html" %}
+{% block content %}
 
-<h1>Delete Thing</h1>
+<div class="container ml-5 pt-4">
+    <input type="submit" class="btn-info" onclick="window.location='{% url 'todo:task_list' %}'; return false;" value="See Tasks">
+</div>
 
-<p>Are you sure you want to delete the task: {{ task }}?</p>
-
+<div class="container my-4 text-center detail-title">
+    <h3>Delete Task</h3>
+</div>
+<p class="container text-center">Are you sure you want to delete <b>{{ task }}</b> ?
+</p>
 <form action="" method="POST">
-  {% csrf_token %}
-  <input type="submit" value="Yes, delete.">
-  <input type="submit" onclick="window.location='{% url 'todo:all' %}' ; return false;" value="Cancel">
+    {% csrf_token %}
+    <div class="container text-center ">
+        <input type="submit" onclick="window.location='{% url 'todo:all' %}' ; return false;" value="Cancel" >
+        <input type="submit" value="Yes, delete." class="btn-danger">
+        
+    </div>
 </form>
-
+{% endblock %}

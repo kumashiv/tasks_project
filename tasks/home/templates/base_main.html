@@ -1,10 +1,9 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>{% block title %}ToDo by Shiv{% endblock %}</title>
-	
+    <title>{% block title %}ToDo by Shiv{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,30 +11,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--  <link rel="stylesheet" href="css/style.css"> -->
     {% block head %} {% endblock %}
-
 </head>
+
 <body>
-<div class="container">
-{% block navbar %} {% endblock %}
-{% block welcome %} {% endblock %}
-{% block messages %}
-    {% if messages %}
-    {% for msg in messages %}
+    <div>
+        {% block navbar %} {% endblock %}
+        {% block welcome %} {% endblock %}
+        {% block messages %}
+        {% if messages %}
+        {% for msg in messages %}
         <div class="alert alert-{{msg.level_tag}}" role="alert">
-        {{msg.message}}
+            {{msg.message}}
         </div>
-    {% endfor %}
-    {% endif %}
-{% endblock %}
-
-{% block content %}
-{% endblock %}
-
-</div>
-{% block footer %} {% endblock %}
+        {% endfor %}
+        {% endif %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block footer %} {% endblock %}
+    <script>
+    document.getElementById("date").innerHTML = new Date().toDateString();
+    </script>
 </body>
+
 </html>
