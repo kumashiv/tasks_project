@@ -5,6 +5,8 @@ TODO APP by Shiv Kumar
 [![Django Version](https://img.shields.io/badge/django-3.0-brightgreen.svg)](https://djangoproject.com)
 
 
+Sample pages :
+
 Things (Category)
 
 
