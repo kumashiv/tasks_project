@@ -10,4 +10,6 @@ TODO APP by Shiv Kumar
 
 ![Home](https://user-images.githubusercontent.com/70986603/174464626-2b17b437-6982-43d1-b933-39000c89e6d0.png)
 
-![another Things Screenshot](media/Home.png)
+<img width="400" src="https://user-images.githubusercontent.com/70986603/174464626-2b17b437-6982-43d1-b933-39000c89e6d0.png">
+
+
