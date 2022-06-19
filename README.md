@@ -1,6 +1,4 @@
 
-
-
 TODO APP by Shiv Kumar
 
 [![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
@@ -16,6 +14,10 @@ Tasks
 
 <img width="400" alt="Tasks" src="https://user-images.githubusercontent.com/70986603/174464707-7b1fed38-f84f-4c64-b3c8-cee1000be00f.png">
 
+
+Add Task
+
+<img width="400" alt="Tasks" src="https://user-images.githubusercontent.com/70986603/174464722-2c1a8181-139e-4f3f-9ef9-1eb3b6b558db.png">
 
 Add Task
 
