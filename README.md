@@ -1,5 +1,5 @@
-Tasks project
 
+<<<<<<< HEAD
 TODO APP by Shiv Kumar
 
 [![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
@@ -16,3 +16,5 @@ Add Task
 
 Delete Task
 <img width="400" alt="Tasks" src="https://user-images.githubusercontent.com/70986603/174464732-84f83d87-5af7-4e10-8497-8cef7b61952c.png">
+=======
+>>>>>>> c19d3c013e3aab5f65aa9b9f746c5baabf0535d5
