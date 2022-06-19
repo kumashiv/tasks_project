@@ -1,59 +1,77 @@
 {% extends "base_main.html" %}
 {% block content %}
 <div class="container-fluid p-4 main-header">
-    <div class="header-offset">
-        <h1>Your</h1>
-        <h1>Things</h1>
-        <!-- <p>May 10, 2021</p> -->
-        <p id="date"></p>
-    </div>
+  <div class="header-offset">
+    <h1>Your</h1>
+    <h1>Things</h1>
+    <!-- <p>May 10, 2021</p> -->
+    <p id="date"></p>
+  </div>
 </div>
+
 <div class="container my-4 w-75">
-    <div class="d-flex flex-main">
-        <div class="p-4 flex-fill text-center border-light rounded">
-            <a href="{% url 'todo:task_list' %}">Created Tasks : {{ task_count }}
-            </a>
-        </div>
-        <div class="p-4  flex-fill text-center border-light rounded">Completed Tasks</div>
+  <div class="d-flex flex-main">
+    <div class="p-4 flex-fill text-center border-light rounded">
+      <a href="{% url 'todo:task_list' %}">Tasks : {{ task_count }} </a>
     </div>
+    <!-- <div class="p-4  flex-fill text-center border-light rounded">Completed Tasks</div> -->
+
+    <div class="p-4  flex-fill text-center ">
+      <a href="{% url 'todo:task_create' %}">
+        <button class="btn btn-info ">Add Task</button>
+      </a>
+    </div>
+  </div>
 </div>
+
+<!-- <div class="container my-4 w-75">
+  <div class="d-flex flex-main">
+    <div class="p-4  flex-fill text-center "><button class="btn btn-info ">Add Task</button></div>
+  </div>
+  <div class="p-4 flex-fill text-center border-light rounded">
+    <a href="{% url 'todo:task_list' %}">Created Tasks : {{ task_count }}
+    </a>
+  </div>
+
+</div> -->
+
 {% if thing_list %}
 {% for thing in thing_list %}
 <div class="container">
-    <!--card-columns-->
-    <div class="card mb-3 my-card">
-        <div class="card-body">
-            <div class="d-inline p-2 text-capitalize">
-                <a href="{% url 'todo:thing_update' thing.id %}">
-                    
-                    <span>{{ thing.name }}</span>
-                </a>
-            </div>
-            <div class=" d-inline p-2">
-                <a href="{% url 'todo:thing_delete' thing.id %}">
-                    <button class="btn btn-lg float-right my-btn-delete"><i class="fa fa-trash-o"></i></button>
-                </a>
-            </div>
-            <div class="mt-3 ml-3 d-block">
-                    {% with total=thing.task_set.all.count %}
-                    <p class="">{{total}} Task</p>
-                    {% endwith %}
-            </div>
-        </div>
+  <!--card-columns-->
+  <div class="card mb-3 my-card">
+    <div class="card-body">
+      <div class="d-inline p-2 text-capitalize">
+        <a href="{% url 'todo:thing_update' thing.id %}">
+
+          <span>{{ thing.name }}</span>
+        </a>
+      </div>
+      <div class=" d-inline p-2">
+        <a href="{% url 'todo:thing_delete' thing.id %}">
+          <button class="btn btn-lg float-right my-btn-delete"><i class="fa fa-trash-o"></i></button>
+        </a>
+      </div>
+      <div class="mt-1 ml-3 d-block">
+        {% with total=thing.task_set.all.count %}
+        <p class="">{{total}} Task</p>
+        {% endwith %}
+      </div>
     </div>
+  </div>
 </div>
 {% endfor %}
 {% else %}
 <p>There are no things in the library.</p>
 {% endif %}
 <p>
-    <!-- <a href="{% url 'todo:task_list' %}">View tasks</a> ({{ task_count }}) |
+  <!-- <a href="{% url 'todo:task_list' %}">View tasks</a> ({{ task_count }}) |
     <a href="{% url 'todo:thing_create' %}">Add a thing</a> -->
 </p>
 <div class="container h-25">
-    <a href="{% url 'todo:thing_create' %}">
-        <button class="btn btn-lg float-right"><i class="fa fa-plus-square"></i></button>
-    </a>
+  <a href="{% url 'todo:thing_create' %}">
+    <button class="btn btn-lg float-right"><i class="fa fa-plus-square"></i></button>
+  </a>
 </div>
 <div class="container p-5"></div>
 {% endblock %}

@@ -2,35 +2,39 @@
 {% block content %}
 
 <div class="container ml-5 pt-4">
-    <input type="submit" class="btn-info" onclick="window.location='{% url 'todo:all' %}'; return false;" value="Home">
+  <input type="submit" class="btn-info" onclick="window.location='{% url 'todo:all' %}'; return false;" value="Home">
 </div>
 
 <div class="container my-4 text-center detail-title">
-    <h3>Tasks List</h3>
+  <h3>Tasks List</h3>
 </div>
 {% if task_list %}
 {% for task in task_list %}
-<a href="{% url 'todo:task_update' task.id %}">
-    <div class="container mt-3">
-        <div class="card mb-3 my-card-2">
-            <div class="card-body py-3">
-                <b>{{ task.name }}</b> ({{ task.thing }})
-                <a href="{% url 'todo:task_delete' task.id %}">Delete</a>
-                <br />
-                Details: {{ task.description }}
-                <p>
-                </p>
-            </div>
-        </div>
+
+<div class="container mt-3">
+  <div class="card mb-3 my-card-2">
+    <div class="card-body py-3">
+      <a href="{% url 'todo:task_update' task.id %}">
+        <b>{{ task.name }}</b>
+      </a>
+      ({{ task.thing }})
+      <a href="{% url 'todo:task_delete' task.id %}">Delete</a>
+      <br />
+      Details: {{ task.description }}
+      <p>
+      </p>
     </div>
-</a>
+  </div>
+</div>
+
 {% endfor %}
 {% else %}
 <p>There are no tasks in the library.</p>
 {% endif %}
 <div class="container h-25">
-    <a href="{% url 'todo:task_create' %}">
-        <button class="btn btn-lg float-right"><i class="fa fa-plus-square"></i></button>
-    </a>
+  <a href="{% url 'todo:task_create' %}">
+    <button class="btn btn-lg float-right"><i class="fa fa-plus-square"></i></button>
+  </a>
 </div>
+<div class="container p-5"></div>
 {% endblock %}

@@ -54,16 +54,16 @@ class ThingDelete(DeleteView):
 class TaskCreate(CreateView):
     model = Task
     fields = '__all__'
-    success_url = reverse_lazy('todo:all')
+    success_url = reverse_lazy('todo:task_list')
 
 
 class TaskUpdate(UpdateView):
     model = Task
     fields = '__all__'
-    success_url = reverse_lazy('todo:all')
+    success_url = reverse_lazy('todo:task_list')
 
 
 class TaskDelete(DeleteView):
     model = Task
     fields = '__all__'
-    success_url = reverse_lazy('todo:all')
+    success_url = reverse_lazy('todo:task_list')
