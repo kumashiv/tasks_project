@@ -6,4 +6,4 @@ TODO APP by Shiv Kumar
 [![Django Version](https://img.shields.io/badge/django-2.0-brightgreen.svg)](https://djangoproject.com)
 
 
-![Things Screenshot](/media/Home.png)
+![Things Screenshot](../media/Home.png)
